@@ -1,6 +1,6 @@
 {
     "name": "tipusultan/licensevalidator",
-    "description": "A Laravel package for license validation",
+    "description": "A simple Laravel package for license validation",
     "type": "library",
     "keywords": ["laravel", "license", "validation"],
     "license": "MIT",
@@ -13,7 +13,8 @@
     "require": {
         "php": ">=8.1 <8.5",
         "illuminate/support": "^9.0|^10.0|^11.0",
-        "illuminate/contracts": "^9.0|^10.0|^11.0"
+        "illuminate/contracts": "^9.0|^10.0|^11.0",
+        "guzzlehttp/guzzle": "^7.0"
     },
     "autoload": {
         "psr-4": {
