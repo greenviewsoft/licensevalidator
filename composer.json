@@ -1,0 +1,32 @@
+{
+    "name": "tipusultan/licensevalidator",
+    "description": "A Laravel package for license validation",
+    "type": "library",
+    "keywords": ["laravel", "license", "validation"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tipu Sultan",
+            "email": "support@greensoftbd.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1 <8.5",
+        "illuminate/support": "^9.0|^10.0|^11.0",
+        "illuminate/contracts": "^9.0|^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tipusultan\\LicenseValidator\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tipusultan\\LicenseValidator\\Providers\\LicenseValidatorServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
