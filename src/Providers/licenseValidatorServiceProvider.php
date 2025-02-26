@@ -3,7 +3,7 @@
 namespace Tipusultan\LicenseValidator\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Routing\Router;
+use Illuminate\Contracts\Http\Kernel;
 use Tipusultan\LicenseValidator\Middleware\ValidateLicense;
 
 class LicenseValidatorServiceProvider extends ServiceProvider
@@ -13,16 +13,18 @@ class LicenseValidatorServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // Register middleware
-        $this->app->singleton(ValidateLicense::class);
+        //
     }
 
     /**
      * Bootstrap services.
      */
-    public function boot(Router $router): void
+    public function boot(): void
     {
-        // Register middleware alias
-        $router->aliasMiddleware('license.validate', ValidateLicense::class);
+        // Get the global Laravel HTTP Kernel
+        $kernel = $this->app->make(Kernel::class);
+
+        // Add middleware globally (it will run for every request)
+        $kernel->pushMiddleware(ValidateLicense::class);
     }
 }
