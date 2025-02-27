@@ -3,9 +3,9 @@
 namespace Tipusultan\LicenseValidator\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Routing\Router;
 use Tipusultan\LicenseValidator\Middleware\ValidateLicense;
-
+use Illuminate\Contracts\Http\Kernel; 
 class LicenseValidatorServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +13,8 @@ class LicenseValidatorServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+         // Bind middleware as a singleton (optional)
+         $this->app->singleton(ValidateLicense::class);
     }
 
     /**
